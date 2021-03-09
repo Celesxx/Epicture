@@ -1,0 +1,25 @@
+name: Kotlin build
+
+on:
+  push:
+    branches:
+    - develop
+  pull_request:
+    branches:
+    - develop
+
+jobs: 
+  build:
+
+
+    steps: 
+      - uses : actions/checkout@v1
+
+      - name: set up JDK
+        uses: actions/setup-java@v1
+
+      - name: Run tests
+        run: ./gradlew test
+
+      - name: Build project
+        run: ./gradlew assemble
