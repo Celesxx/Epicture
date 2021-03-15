@@ -7,7 +7,6 @@ data class ImageData(
     val image: ImageBitmap? = null,
     val link: String = "",
     val name: String = "",
-    val title: String = "",
-    val description: String = ""
-
+    val title: String? = "",
+    val description: String? = ""
 )
