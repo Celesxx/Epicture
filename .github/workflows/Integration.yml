@@ -33,8 +33,8 @@ jobs:
 
 
       - name: Make gradlew executable
-        run: chmod +x ./gradlew
+        run: chmod +x ./epitcture_projects/gradlew
 
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./epitcture_projects/gradlew build
