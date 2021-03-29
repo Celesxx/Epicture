@@ -38,7 +38,7 @@ jobs:
         run: ./epicture_project/gradlew build
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug
+        run: ./epicture_project/gradlew assembleDebug
 
       - name: Create release and upload apk
         uses: underwindfall/create-release-with-debugapk@v2.0.0
