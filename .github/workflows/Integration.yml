@@ -20,8 +20,6 @@ jobs:
         uses: actions/setup-java@v1
         with: 
           java-version: 15.0.2
-      # - name: Run tests
-      #   run: ./gradlew test
 
 
       - name: Emplacement of racine file
@@ -46,9 +44,9 @@ jobs:
       - name: Releasing apk
         uses: Celesxx/Epicture@master
         env:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        APP_FOLDER: ./
-        RELEASE_TITLE: New Build
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          APP_FOLDER: ./
+          RELEASE_TITLE: New Build
 
 
       - uses: actions/checkout@v2
@@ -56,4 +54,4 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "main"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
