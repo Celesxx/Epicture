@@ -7,7 +7,7 @@ on:
     - develop
   
 jobs:
-  pull-request:
+  Build_release:
     runs-on: ubuntu-latest
 
     steps:
