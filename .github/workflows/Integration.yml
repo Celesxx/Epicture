@@ -46,7 +46,7 @@ jobs:
       - name: Releasing apk
         uses: Celesxx/Epicture@master
         env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         APP_FOLDER: ./
         RELEASE_TITLE: New Build
 
@@ -56,4 +56,4 @@ jobs:
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "main"
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
