@@ -42,8 +42,8 @@ jobs:
       - name: Build with Gradle
         run: ./epicture_project/gradlew build
 
-      - name: Build Debug APK
-        run: ./epicture_project/gradlew assemble
+      # - name: Build Debug APK
+      #   run: ./epicture_project/gradlew assemble
 
       - name: Create release and upload apk
         uses: underwindfall/create-release-with-debugapk@v2.0.0
