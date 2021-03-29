@@ -42,7 +42,7 @@ jobs:
 
 
       - name: Releasing apk
-        uses: Celesxx/Epicture@master
+        uses: Celesxx/Epicture@main
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           APP_FOLDER: ./
