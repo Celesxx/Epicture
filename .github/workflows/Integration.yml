@@ -49,9 +49,9 @@ jobs:
           RELEASE_TITLE: New Build
 
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@main
       - name: pull-request
-        uses: repo-sync/pull-request@v2
+        uses: repo-sync/pull-request@main
         with:
           destination_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
