@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps: 
-      - uses : actions/checkout@v1
-
+      - uses: actions/checkout@v2
 
       - name: set up JDK
         uses: actions/setup-java@v1
@@ -49,7 +48,7 @@ jobs:
           RELEASE_TITLE: New Build
 
 
-      - uses: actions/checkout@v2
+      
       - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
