@@ -24,11 +24,11 @@ jobs:
       #   run: ./gradlew test
 
 
-      - name: Emplacement de la racine 
+      - name: Emplacement of racine file
         run: ls -ali
       
       
-      - name: Emplacement de la racine 
+      - name: Emplacement of racine file
         run: dir
 
 
@@ -38,3 +38,14 @@ jobs:
 
       - name: Build with Gradle
         run: ./epicture_project/gradlew build
+
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
+
+
+    - name: Releasing apk
+      uses: Celesxx/Epicture@master
+      env:
+       GITHUB_TOKEN: ${{ secrets.TOKEN }}
+       APP_FOLDER: ./
+       RELEASE_TITLE: New Build
