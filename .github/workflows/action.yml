@@ -9,12 +9,10 @@ on:
 jobs:
   pull-request:
     runs-on: ubuntu-latest
-    - uses : Celesxx/Epicture@main
+    - uses: actions/checkout@v2
 
     steps:
-    - uses: actions/checkout@v2
     - name: pull-request
-      uses: repo-sync/pull-request@v2
+      uses: Celesxx/create-pull-request@v3
       with:
-        destination_branch: "main"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
