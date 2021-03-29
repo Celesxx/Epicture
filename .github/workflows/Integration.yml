@@ -1,0 +1,46 @@
+name: Kotlin build
+
+on:
+  push:
+    branches:
+    - develop
+  pull_request:
+    branches:
+    - develop
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - uses : actions/checkout@v1
+
+
+      - name: set up JDK
+        uses: actions/setup-java@v1
+        with: 
+          java-version: 15.0.2
+
+
+      - name: Emplacement of racine file
+        run: ls -ali
+      
+      
+      - name: Emplacement of racine file
+        run: dir
+
+      - name: Add ANDROID_HOME path
+        run : export ANDROID_HOME=/home/youruser/whatever/adt-bundle-linux-x86_64-20140702/sdk
+      
+      - name: export ANDROID_HOME path to env
+        run : export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platforms-tools
+        
+      - name: Make gradlew executable
+        run: chmod +x ./epicture_project/gradlew
+
+
+      - name: Build with Gradle
+        run: ./epicture_project/gradlew build
+
+      # - name: Build Debug APK
+      #   run: ./epicture_project/gradlew assemble
