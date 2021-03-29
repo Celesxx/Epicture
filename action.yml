@@ -1,0 +1,15 @@
+
+name: GitHub Pull Request Action
+author: Cameron
+description: ⤵️ Create pull request
+branding:
+  icon: 'git-pull-request'
+  color: 'black'
+inputs:
+  develop:
+    description: Branch name to pull from, default is triggered branch
+    required: false
+  main:
+    description: Branch name to sync to in this repo, default is main
+    required: false
+    default: master
