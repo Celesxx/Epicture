@@ -33,8 +33,12 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./epicture_project/gradlew
 
-      - name: Build debug apk
-        run: ./epicture_project/gradlew clean assembleDebug
+
+      - name: Build with Gradle
+        run: ./epicture_project/gradlew build
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
 
       - name: Create release and upload apk
         uses: underwindfall/create-release-with-debugapk@v2.0.0
