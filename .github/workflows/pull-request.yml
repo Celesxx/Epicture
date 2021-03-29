@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: pull-request
-        uses: Celesxx/create-pull-request@v3
-        with:
-            base: main
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "main"
+        github_token: ${{ secrets.GITHUB_TOKEN }}

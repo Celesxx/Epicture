@@ -50,7 +50,6 @@ jobs:
 
       
       - name: pull-request
-        uses: actions/checkout@v2
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "main"
