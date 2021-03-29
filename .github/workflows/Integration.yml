@@ -33,7 +33,6 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./epicture_project/gradlew
 
-      //
       - name: Build debug apk
         run: ./epicture_project/gradlew clean assembleDebug
 
