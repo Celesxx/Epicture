@@ -29,7 +29,10 @@ jobs:
       - name: Emplacement of racine file
         run: dir
 
-
+      - name: Add ANDROID_HOME path to env
+        run : export ANDROID_HOME=/home/youruser/whatever/adt-bundle-linux-x86_64-20140702/sdk
+        run : export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platforms-tools
+        
       - name: Make gradlew executable
         run: chmod +x ./epicture_project/gradlew
 
