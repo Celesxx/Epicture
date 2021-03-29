@@ -39,13 +39,21 @@ jobs:
       - name: Build with Gradle
         run: ./epicture_project/gradlew build
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug
 
 
-    - name: Releasing apk
-      uses: Celesxx/Epicture@master
-      env:
-       GITHUB_TOKEN: ${{ secrets.TOKEN }}
-       APP_FOLDER: ./
-       RELEASE_TITLE: New Build
+      - name: Releasing apk
+        uses: Celesxx/Epicture@master
+        env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        APP_FOLDER: ./
+        RELEASE_TITLE: New Build
+
+
+      - uses: actions/checkout@v2
+      - name: pull-request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
