@@ -9,10 +9,10 @@ on:
 jobs:
   pull-request:
     runs-on: ubuntu-latest
-      - uses: actions/checkout@v2
 
     steps:
-    - name: pull-request
-      uses: Celesxx/create-pull-request@v3
-      with:
-          base: main
+      - uses: actions/checkout@v2
+      - name: pull-request
+        uses: Celesxx/create-pull-request@v3
+        with:
+            base: main
