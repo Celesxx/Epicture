@@ -46,11 +46,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           APP_FOLDER: ./
           RELEASE_TITLE: New Build
-
-
-      
-      - name: pull-request
-        uses: repo-sync/pull-request@v2
-        with:
-          destination_branch: "main"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
