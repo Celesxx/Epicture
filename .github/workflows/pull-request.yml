@@ -17,3 +17,10 @@ jobs:
         with:
           destination_branch: "main"
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Releasing using Hub
+        uses: ShaunLWM/action-release-debugapk@master
+        env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        APP_FOLDER: app
+        RELEASE_TITLE: New Build
